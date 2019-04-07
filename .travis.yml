@@ -1,0 +1,43 @@
+language: cpp
+sudo: false
+
+os:
+  - linux
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - GITHUB_NAME: FileSearchEngine
+    - GITHUB_REF: github.com/borutainfo/FileSearchEngine.git
+
+addons:
+  apt:
+    packages:
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+
+before_script:
+  - export TZ="/usr/share/zoneinfo/Europe/Warsaw"
+  - cd ${TRAVIS_BUILD_DIR}
+  - mkdir build && cd build
+  - cmake ..
+
+jobs:
+  include:
+    - stage: "compile"
+      compiler: gcc
+      script: make engine
+    - stage: "compile"
+      compiler: clang
+      script: make engine
+    - stage: "docs"
+      script: make doc_doxygen
+      deploy:
+        skip_cleanup: true
+        provider: script
+        script: sh ${TRAVIS_BUILD_DIR}/ci/docs_deploy.sh
