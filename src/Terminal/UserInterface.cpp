@@ -13,10 +13,17 @@ vector<string> UserInterface::getUserInput() {
 
     string option;
     getline(cin, option);
-    regex regex{R"([\s]+)"};
-    sregex_token_iterator it{option.begin(), option.end(), regex, -1};
-    vector<string> result{it, {}};
-    return result;
+
+    stringstream str_strm(option);
+    string tmp;
+    vector<string> words;
+    char delim = ' ';
+
+    while (getline(str_strm, tmp, delim)) {
+        words.push_back(tmp);
+    }
+
+    return words;
 }
 
 void UserInterface::exitMessage() {
