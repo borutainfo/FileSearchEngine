@@ -5,5 +5,32 @@ AddFileCommand::AddFileCommand(vector<FileEntity> *fileEntityCollection) {
 }
 
 void AddFileCommand::execute(vector<string> arguments) {
-    cout << endl << "AddFile";
+    int successfullyAdded = 0;
+    for (const auto &argument: arguments) {
+        if (this->executeForSingleFile(argument)) {
+            successfullyAdded++;
+        }
+    }
+
+    if (successfullyAdded > 0) {
+        cout << "Successfully added " << successfullyAdded << " files." << endl;
+    } else {
+        cout << "Failure when adding files!" << endl;
+    }
+}
+
+bool AddFileCommand::executeForSingleFile(string argument) {
+    if (!FileHelper::fileExists(argument)) {
+        cout << "File '" << argument << "' not exists!" << endl;
+        return false;
+    }
+
+    FileEntity fileEntity = {};
+    fileEntity.setFileName(new FileName(argument));
+    fileEntity.setFileContent(new FileContent(FileHelper::getFileContent(argument)));
+
+    this->fileEntityCollection->push_back(fileEntity);
+
+    cout << "File '" << argument << "' successfully added!" << endl;
+    return true;
 }

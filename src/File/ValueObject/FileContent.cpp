@@ -19,7 +19,7 @@ FileContent::FileContent(string value) {
 }
 
 bool FileContent::validate(string value) {
-    return true; // todo validation
+    return !value.empty();
 }
 
 const string &FileContent::value() const {

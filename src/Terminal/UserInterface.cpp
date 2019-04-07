@@ -12,7 +12,7 @@ vector<string> UserInterface::getUserInput() {
     cout << endl << "FileSearchEngine:~$ ";
 
     string option;
-    cin >> option;
+    getline(cin, option);
     regex regex{R"([\s]+)"};
     sregex_token_iterator it{option.begin(), option.end(), regex, -1};
     vector<string> result{it, {}};

@@ -2,6 +2,7 @@
 #define FILESEARCHENGINE_FILENAME_H
 
 #include <string>
+#include <cstring>
 
 using namespace std;
 

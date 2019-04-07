@@ -8,14 +8,6 @@ void FileEntity::setFileName(FileName *fileName) {
     FileEntity::fileName = fileName;
 }
 
-DirectoryPath *FileEntity::getDirectoryPath() const {
-    return directoryPath;
-}
-
-void FileEntity::setDirectoryPath(DirectoryPath *directoryPath) {
-    FileEntity::directoryPath = directoryPath;
-}
-
 FileContent *FileEntity::getFileContent() const {
     return fileContent;
 }

@@ -21,7 +21,15 @@ FileName::FileName(string value)
 
 bool FileName::validate(string value)
 {
-    return true; // todo validation
+    char deniedCharacters[] = {'!', '@', '%', '^', '*', '~', '|'};
+
+    for (char deniedCharacter: deniedCharacters) {
+        if (strchr(value.c_str(), deniedCharacter) != nullptr) {
+            return false;
+        }
+    }
+
+    return !value.empty();
 }
 
 const string &FileName::value() const
