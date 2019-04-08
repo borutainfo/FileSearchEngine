@@ -2,8 +2,8 @@
 #include <vector>
 #include "Terminal/UserInterface.h"
 #include "File/Entity/FileEntity.h"
-#include "Terminal/Factory/CommandFactory.h"
-#include "Terminal/Helper/CommandHelper.h"
+#include "Common/Factory/CommandFactory.h"
+#include "Common/Helper/CommandHelper.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ int main() {
             ICommand *command = nullptr;
             command = commandFactory->create(CommandHelper::getCommandName(userInput));
             command->execute(CommandHelper::getCommandArguments(userInput));
-        } catch (ExitException &e) {
+        } catch (ExitCommand &e) {
             break;
         } catch (...) {
             break;

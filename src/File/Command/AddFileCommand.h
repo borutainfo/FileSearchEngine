@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include "File/Entity/FileEntity.h"
-#include "Terminal/Command/ICommand.h"
+#include "Common/Command/ICommand.h"
 #include "File/Helper/FileHelper.h"
 
 using namespace std;

@@ -2,7 +2,7 @@
 
 ICommand *CommandFactory::create(string commandName) {
     if (commandName == "exit") {
-        throw ExitException();
+        throw ExitCommand();
     } else if (commandName == "help") {
         return new HelpCommand();
     } else if (commandName == "addfile") {
