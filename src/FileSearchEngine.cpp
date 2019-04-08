@@ -23,6 +23,8 @@ int main() {
             command->execute(CommandHelper::getCommandArguments(userInput));
         } catch (ExitCommand &e) {
             break;
+        } catch (CommandNotExistsException &e) {
+            cout << e.what() << endl;
         } catch (...) {
             return -1;
         }

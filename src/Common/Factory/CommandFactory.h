@@ -4,11 +4,13 @@
 #include <string>
 #include <vector>
 #include "Common/Command/ICommand.h"
+#include "Common/Exception/CommandNotExistsException.h"
+#include "Common/Exception/ExitCommand.h"
+#include "Common/Constant/CommandConstant.h"
 #include "File/Entity/FileEntity.h"
 #include "File/Command/AddFileCommand.h"
 #include "Terminal/Command/HelpCommand.h"
-#include "Common/Exception/CommandNotExistsException.h"
-#include "Common/Exception/ExitCommand.h"
+#include "Search/Command/SearchCommand.h"
 
 using namespace std;
 

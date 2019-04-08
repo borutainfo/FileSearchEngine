@@ -7,6 +7,10 @@ string CommandHelper::getCommandName(vector<string> userInput) {
 }
 
 vector<string> CommandHelper::getCommandArguments(vector<string> userInput) {
-    userInput.erase(userInput.begin());
+    if (userInput.size() > 1) {
+        userInput.erase(userInput.begin());
+    } else {
+        userInput = vector<string>();
+    }
     return userInput;
 }
