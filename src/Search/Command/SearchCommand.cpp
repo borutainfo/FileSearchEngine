@@ -12,5 +12,12 @@ void SearchCommand::execute(vector<string> arguments) {
 
     string searchQuery = arguments.front();
 
+    auto *translationService = new TranslationService;
+    string regex = translationService->translateQueryToRegex(searchQuery);
+
+    for (const auto &fileEntity: *this->fileEntityCollection) {
+        fileEntity.getFileContent()->value().find(regex);
+    }
+
     cout << endl << "NOT FOUND" << endl;
 }
