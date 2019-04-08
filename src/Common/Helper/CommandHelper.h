@@ -16,12 +16,14 @@ public:
     /**
     * @brief Method returns command name (first argument of user input).
     * @param vector<string> userInput
+    * @return string
     */
     static string getCommandName(vector<string> userInput);
 
     /**
     * @brief Method returns command arguments (input arguments omitting the command name).
     * @param vector<string> userInput
+    * @return vector<string>
     */
     static vector<string> getCommandArguments(vector<string> userInput);
 };

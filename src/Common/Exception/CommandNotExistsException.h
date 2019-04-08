@@ -1,6 +1,10 @@
 #ifndef FILESEARCHENGINE_COMMANDNOTEXISTSEXCEPTION_H
 #define FILESEARCHENGINE_COMMANDNOTEXISTSEXCEPTION_H
 
+#include <exception>
+
+using namespace std;
+
 /**
  * @brief Exception thrown if no command match to command name.
  * @struct CommandNotExistsException

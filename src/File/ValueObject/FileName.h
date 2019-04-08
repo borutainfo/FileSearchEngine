@@ -3,6 +3,7 @@
 
 #include <string>
 #include <cstring>
+#include "File/Exception/InvalidFileNameException.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
     /**
     * @brief ValueObject constructor gets file name as a string.
     * @param string value
+    * @throw InvalidFileNameException throw exception on invalid value
     */
     explicit FileName(string value);
 

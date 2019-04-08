@@ -1,11 +1,11 @@
-#include "UserInterface.h"
+#include "BasicCommunicationService.h"
 
-void UserInterface::initMessage() {
+void BasicCommunicationService::beginNotice() {
     cout << "FileSearchEngine v1.0 by Boruta" << endl;
     cout << "----------------------------------------------------" << endl << endl;
 }
 
-vector<string> UserInterface::getUserInput() {
+vector<string> BasicCommunicationService::getUserInput() {
     cout << "Available commands: " << endl;
     cout << "addfile $filename" << endl;
 
@@ -26,6 +26,6 @@ vector<string> UserInterface::getUserInput() {
     return words;
 }
 
-void UserInterface::exitMessage() {
+void BasicCommunicationService::endNotice() {
     cout << "bye" << endl;
 }

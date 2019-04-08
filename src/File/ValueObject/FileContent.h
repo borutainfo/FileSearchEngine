@@ -2,6 +2,7 @@
 #define FILESEARCHENGINE_FILECONTENT_H
 
 #include <string>
+#include "File/Exception/InvalidFileContentException.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ public:
     /**
     * @brief ValueObject constructor gets file content as a string.
     * @param string value
+    * @throw InvalidFileContentException throw exception on invalid value
     */
     explicit FileContent(string value);
 
@@ -34,6 +36,5 @@ protected:
 private:
     string privateValue;
 };
-
 
 #endif

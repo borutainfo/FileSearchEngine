@@ -27,6 +27,7 @@ public:
     /**
     * @brief Method create ICommand object according to received command name.
     * @param string commandName
+    * @return ICommand child class object
     */
     ICommand *create(string commandName);
 

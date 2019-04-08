@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "Terminal/UserInterface.h"
+#include "Terminal/Service/BasicCommunicationService.h"
 #include "File/Entity/FileEntity.h"
 #include "Common/Factory/CommandFactory.h"
 #include "Common/Helper/CommandHelper.h"
@@ -10,26 +10,25 @@ using namespace std;
 int main() {
     vector<FileEntity> fileEntityCollection;
 
-    auto *userInterface = new UserInterface;
+    auto *basicCommunicationService = new BasicCommunicationService;
     auto *commandFactory = new CommandFactory(&fileEntityCollection);
 
-    userInterface->initMessage();
+    basicCommunicationService->beginNotice();
 
     while (true) {
         try {
-            vector<string> userInput = userInterface->getUserInput();
+            vector<string> userInput = basicCommunicationService->getUserInput();
 
-            ICommand *command = nullptr;
-            command = commandFactory->create(CommandHelper::getCommandName(userInput));
+            ICommand *command = commandFactory->create(CommandHelper::getCommandName(userInput));
             command->execute(CommandHelper::getCommandArguments(userInput));
         } catch (ExitCommand &e) {
             break;
         } catch (...) {
-            break;
+            return -1;
         }
     };
 
-    userInterface->exitMessage();
+    basicCommunicationService->endNotice();
 
     return 0;
 }
