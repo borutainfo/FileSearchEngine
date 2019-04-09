@@ -13,10 +13,13 @@ void SearchCommand::execute(vector<string> arguments) {
     string searchQuery = arguments.front();
 
     auto *translationService = new TranslationService;
-    string regex = translationService->translateQueryToRegex(searchQuery);
+    string pattern = translationService->translateQueryToRegex(searchQuery);
+
+    regex regex(pattern);
 
     for (const auto &fileEntity: *this->fileEntityCollection) {
-        fileEntity.getFileContent()->value().find(regex);
+        string content = fileEntity.getFileContent()->value();
+        ptrdiff_t matches = distance(std::sregex_iterator(content.begin(), content.end(), regex), sregex_iterator());
     }
 
     cout << endl << "NOT FOUND" << endl;

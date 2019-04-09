@@ -3,9 +3,12 @@
 
 #include <iostream>
 #include <vector>
+#include <regex>
 #include "Common/Command/ICommand.h"
 #include "File/Entity/FileEntity.h"
 #include "Translation/Service/TranslationService.h"
+
+using namespace std;
 
 /**
  * @brief Command used to search text in files from collection.
