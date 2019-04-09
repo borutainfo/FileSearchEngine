@@ -7,6 +7,8 @@
 #include "Common/Command/ICommand.h"
 #include "File/Entity/FileEntity.h"
 #include "Translation/Service/TranslationService.h"
+#include "Search/Entity/SearchResultEntity.h"
+#include "Search/Factory/SearchResultEntityFactory.h"
 
 using namespace std;
 
@@ -27,6 +29,13 @@ public:
     * @param vector<string> arguments
     */
     void execute(vector<string> arguments) override;
+
+protected:
+    /**
+    * @brief Internal method to display results of search.
+    * @param vector<SearchResultEntity> *resultCollection
+    */
+    void displayResults(vector<SearchResultEntity> *resultCollection);
 
 private:
     vector<FileEntity> *fileEntityCollection;
