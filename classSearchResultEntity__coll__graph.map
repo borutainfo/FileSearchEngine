@@ -1,0 +1,6 @@
+<map id="SearchResultEntity" name="SearchResultEntity">
+<area shape="rect" id="node2" href="$classFileEntity.html" title="Entity for file storage in object way. " alt="" coords="65,95,142,121"/>
+<area shape="rect" id="node3" href="$classFileContent.html" title="ValueObject for file content. " alt="" coords="5,5,95,32"/>
+<area shape="rect" id="node4" href="$classFileName.html" title="ValueObject for file name. " alt="" coords="119,5,197,32"/>
+<area shape="rect" id="node5" href="$classPositiveNumber.html" title="ValueObject for positive number. " alt="" coords="166,95,281,121"/>
+</map>

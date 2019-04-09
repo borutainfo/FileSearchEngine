@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classICommand.html" title="Command interface. " alt="" coords="5,56,92,83"/>
+<area shape="rect" id="node2" href="$classAddFileCommand.html" title="Command used to adding a file to collection. " alt="" coords="140,5,267,32"/>
+<area shape="rect" id="node3" href="$classHelpCommand.html" title="Command used to display help information. " alt="" coords="149,56,258,83"/>
+<area shape="rect" id="node4" href="$classSearchCommand.html" title="Command used to search text in files from collection. " alt="" coords="142,107,265,133"/>
+</map>
