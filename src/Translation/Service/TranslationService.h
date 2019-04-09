@@ -2,6 +2,7 @@
 #define FILESEARCHENGINE_TRANSLATIONSERVICE_H
 
 #include <string>
+#include <regex>
 
 using namespace std;
 

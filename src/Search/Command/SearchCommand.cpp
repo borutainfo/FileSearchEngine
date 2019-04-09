@@ -10,23 +10,35 @@ void SearchCommand::execute(vector<string> arguments) {
         return;
     }
 
-    string searchQuery = arguments.front();
+    string searchQuery;
+    for (const auto &argument: arguments) {
+        searchQuery += argument + " ";
+    }
+    searchQuery = searchQuery.substr(0, searchQuery.size() - 1);
 
     auto *translationService = new TranslationService;
     string pattern = translationService->translateQueryToRegex(searchQuery);
+
+    cout << "Regex query: " << pattern << endl << endl;
 
     regex regex(pattern);
     vector<SearchResultEntity> resultCollection;
 
     for (const auto &fileEntity: *this->fileEntityCollection) {
         string content = fileEntity.getFileContent()->value();
-        ptrdiff_t matches = distance(std::sregex_iterator(content.begin(), content.end(), regex), sregex_iterator());
+        smatch matches;
 
-        if (matches > 0) {
-            SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
-            searchResultEntity.setMatches(new PositiveNumber(matches));
-            resultCollection.push_back(searchResultEntity);
+        while (regex_search(content, matches, regex)) {
+            for (auto x:matches)
+                cout << x << " ";
+            cout << endl;
+            content = matches.suffix().str();
         }
+
+//        if (matches > 0) {
+//            SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
+//            resultCollection.push_back(searchResultEntity);
+//        }
     }
 
     this->displayResults(&resultCollection);

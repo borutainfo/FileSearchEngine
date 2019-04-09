@@ -23,7 +23,7 @@ public:
 
     /**
     * @brief Method returns file content as string.
-    * @param vector<FileEntity> *fileEntityCollection
+    * @param string fileName
     * @return string
     */
     static string getFileContent(string fileName);
