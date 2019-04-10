@@ -21,24 +21,29 @@ void SearchCommand::execute(vector<string> arguments) {
 
     cout << "Regex query: " << pattern << endl << endl;
 
-    regex regex(pattern);
+    regex regex;
+    try {
+        regex.assign(pattern);
+    } catch (...) {
+        cout << "Invalid search query!" << endl;
+        return;
+    }
+
     vector<SearchResultEntity> resultCollection;
 
     for (const auto &fileEntity: *this->fileEntityCollection) {
         string content = fileEntity.getFileContent()->value();
-        smatch matches;
 
-        while (regex_search(content, matches, regex)) {
-            for (auto x:matches)
-                cout << x << " ";
-            cout << endl;
-            content = matches.suffix().str();
+        try {
+            if (regex_search(content.begin(), content.begin() + (1024 * 4), regex)) {
+                SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
+                searchResultEntity.setMatches(new PositiveNumber(1));
+                resultCollection.push_back(searchResultEntity);
+            }
+        } catch (...) {
+            cout << "Exception!" << endl;
+            return;
         }
-
-//        if (matches > 0) {
-//            SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
-//            resultCollection.push_back(searchResultEntity);
-//        }
     }
 
     this->displayResults(&resultCollection);
@@ -50,8 +55,8 @@ void SearchCommand::displayResults(vector<SearchResultEntity> *resultCollection)
         return;
     }
 
+    cout << "Files that matches to requested search query:" << endl;
     for (const auto &resultEntity: *resultCollection) {
-        cout << resultEntity.getFileName()->value() << " - number of results : ";
-        cout << resultEntity.getMatches()->value() << endl;
+        cout << resultEntity.getFileName()->value() << endl;
     }
 }

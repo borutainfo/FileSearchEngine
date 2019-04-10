@@ -2,13 +2,11 @@
 
 void BasicCommunicationService::beginNotice() {
     cout << "FileSearchEngine v1.0 by Boruta" << endl;
-    cout << "----------------------------------------------------" << endl << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "type 'help' to get more informations" << endl;
 }
 
 vector<string> BasicCommunicationService::getUserInput() {
-    cout << "Available commands: " << endl;
-    cout << "addfile $filename" << endl;
-
     cout << endl << "FileSearchEngine:~$ ";
 
     string option;
@@ -17,9 +15,7 @@ vector<string> BasicCommunicationService::getUserInput() {
     stringstream str_strm(option);
     string tmp;
     vector<string> words;
-    char delim = ' ';
-
-    while (getline(str_strm, tmp, delim)) {
+    while (getline(str_strm, tmp, ' ')) {
         words.push_back(tmp);
     }
 
@@ -27,5 +23,5 @@ vector<string> BasicCommunicationService::getUserInput() {
 }
 
 void BasicCommunicationService::endNotice() {
-    cout << "bye" << endl;
+    cout << endl << "Thank you, bye!" << endl;
 }

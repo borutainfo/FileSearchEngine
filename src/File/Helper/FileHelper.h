@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <streambuf>
+#include <algorithm>
 
 using namespace std;
 

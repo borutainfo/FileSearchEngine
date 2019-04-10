@@ -29,6 +29,13 @@ bool AddFileCommand::executeForSingleFile(string argument) {
     fileEntity.setFileName(new FileName(argument));
     fileEntity.setFileContent(new FileContent(FileHelper::getFileContent(argument)));
 
+    for (const auto &existingFileEntity: *this->fileEntityCollection) {
+        if (existingFileEntity.getFileName()->value() == fileEntity.getFileName()->value()) {
+            cout << "File '" << argument << "' already exists in collection!" << endl;
+            return false;
+        }
+    }
+
     this->fileEntityCollection->push_back(fileEntity);
 
     cout << "File '" << argument << "' successfully added!" << endl;
