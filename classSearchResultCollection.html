@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>FileSearchEngine: Member List</title>
+<title>FileSearchEngine: SearchResultCollection&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,24 +83,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classSearchResultCollection-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SearchResultEntity Member List</div>  </div>
+<div class="title">SearchResultCollection&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classSearchResultEntity.html">SearchResultEntity</a>, including all inherited members.</p>
-<table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>fileContent</b> (defined in <a class="el" href="classFileEntity.html">FileEntity</a>)</td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>fileName</b> (defined in <a class="el" href="classFileEntity.html">FileEntity</a>)</td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFileEntity.html#ad7c6be6afb5897e359e33596e22fd58d">getFileContent</a>() const </td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classFileEntity.html#a13741a2f3cb7a128338ad06d925e03f2">getFileName</a>() const </td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSearchResultEntity.html#ad0ec70ead1a08304c582f65cd38e6d65">getMatches</a>() const </td><td class="entry"><a class="el" href="classSearchResultEntity.html">SearchResultEntity</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>matches</b> (defined in <a class="el" href="classSearchResultEntity.html">SearchResultEntity</a>)</td><td class="entry"><a class="el" href="classSearchResultEntity.html">SearchResultEntity</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSearchResultEntity.html#ab1a045f4bace505f9ddf46974e8afd4a">operator string</a>() const </td><td class="entry"><a class="el" href="classSearchResultEntity.html">SearchResultEntity</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classFileEntity.html#a04cd9ff29727aa189dd59d272a3a7661">setFileContent</a>(FileContent *fileContent)</td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFileEntity.html#a3865c39622e120c4dffc5135e63704f9">setFileName</a>(FileName *fileName)</td><td class="entry"><a class="el" href="classFileEntity.html">FileEntity</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classSearchResultEntity.html#a94cf012d33930578d891dd208c5c4a0d">setMatches</a>(PositiveNumber *matches)</td><td class="entry"><a class="el" href="classSearchResultEntity.html">SearchResultEntity</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Template for storing and displaying search results.  
+ <a href="classSearchResultCollection.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="SearchResultCollection_8h_source.html">SearchResultCollection.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4bcd5c87d7c8677d26228506c4f87bb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearchResultCollection.html#a4bcd5c87d7c8677d26228506c4f87bb9">add</a> (T singleResult)</td></tr>
+<tr class="memdesc:a4bcd5c87d7c8677d26228506c4f87bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to add object to result collection.  <a href="#a4bcd5c87d7c8677d26228506c4f87bb9">More...</a><br /></td></tr>
+<tr class="separator:a4bcd5c87d7c8677d26228506c4f87bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc3d9c296b7db7e6dd9fccf576da8361"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc3d9c296b7db7e6dd9fccf576da8361"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearchResultCollection.html#adc3d9c296b7db7e6dd9fccf576da8361">display</a> ()</td></tr>
+<tr class="memdesc:adc3d9c296b7db7e6dd9fccf576da8361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to display all results. <br /></td></tr>
+<tr class="separator:adc3d9c296b7db7e6dd9fccf576da8361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class SearchResultCollection&lt; T &gt;</h3>
+
+<p>Template for storing and displaying search results. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>object storing single search result </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4bcd5c87d7c8677d26228506c4f87bb9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classSearchResultCollection.html">SearchResultCollection</a>&lt; T &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>singleResult</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method to add object to result collection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>singleResult </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/travis/build/borutainfo/FileSearchEngine/src/Search/Collection/<a class="el" href="SearchResultCollection_8h_source.html">SearchResultCollection.h</a></li>
+<li>/home/travis/build/borutainfo/FileSearchEngine/src/Search/Collection/SearchResultCollection.cpp</li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

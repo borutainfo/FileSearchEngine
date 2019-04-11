@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['positivenumber',['PositiveNumber',['../classPositiveNumber.html',1,'PositiveNumber'],['../classPositiveNumber.html#a7bb22509442dcd650f44d98c99269702',1,'PositiveNumber::PositiveNumber()']]]
+  ['operator_20string',['operator string',['../classSearchResultEntity.html#ab1a045f4bace505f9ddf46974e8afd4a',1,'SearchResultEntity']]]
 ];

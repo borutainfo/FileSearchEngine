@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['searchcommand',['SearchCommand',['../classSearchCommand.html#a8f5e568da18d549d66301cc603cedd24',1,'SearchCommand']]],
-  ['setfilecontent',['setFileContent',['../classFileEntity.html#a04cd9ff29727aa189dd59d272a3a7661',1,'FileEntity']]],
-  ['setfilename',['setFileName',['../classFileEntity.html#a3865c39622e120c4dffc5135e63704f9',1,'FileEntity']]],
-  ['setmatches',['setMatches',['../classSearchResultEntity.html#a94cf012d33930578d891dd208c5c4a0d',1,'SearchResultEntity']]]
+  ['positivenumber',['PositiveNumber',['../classPositiveNumber.html#a7bb22509442dcd650f44d98c99269702',1,'PositiveNumber']]]
 ];
