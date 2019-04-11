@@ -31,7 +31,8 @@ string TranslationService::translateQueryToRegex(string query) {
         unsigned int lastPosition = regexPattern.size();
 
         // left border
-        unsigned int currentPosition = position = openBracket = closeBracket = 0;
+        unsigned int currentPosition = position;
+        openBracket = closeBracket = 0;
         while (currentPosition > 0) {
             // break by OR
             if (currentPosition > 6 && regexPattern.substr(currentPosition - 6, 6) == R"(\ OR\ )") {
