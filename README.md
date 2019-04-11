@@ -16,25 +16,30 @@ about
 ```
 Show information about the project and the author.
 
+
 ```
 add $filename1 [$filename2 ...]
 ```
 Add a file to the collection in which you will search for data. You can add one file or several at a time.
+
 
 ```
 delete $filename1 [$filename2 ...]
 ```
 Delete file from collection in which you will search for data. You can delete one file or several at a time.
 
+
 ```
 exit
 ```
 Close the application.
 
+
 ```
 help
 ```
 Get information about how to use this application.
+
 
 ```
 search $searchQuery
@@ -43,7 +48,7 @@ Search for text in files added to the collection using the given expression. You
 
 You can use any characters. If you use spaces between two words the engine will search for the entire expression (including spaces). If you want to search for a bracket, you must precede it with a slash.
 
-    Some examples - good:
+Some examples - good:
     ```
     search Sebastian AND Boruta
     search Sebastian OR Boruta AND NOT Kowalski
@@ -51,10 +56,14 @@ You can use any characters. If you use spaces between two words the engine will 
     search (NOT (Sebastian OR Boruta) AND Kowalski) OR Nowak
     ```
 
-    BAD (not working properly):
+BAD (not working properly):
     ```
     search SebastianANDBoruta
     search SebastianOR Boruta AND NOTKowalski
     search Sebastian OR Boruta) AND NOT Kowalski
     search (NOT (Sebastian OR Boruta) AND Kowalski)OR((Nowak
     ```
+
+## Documentation
+
+See [Doxygen documentation](https://borutainfo.github.io/FileSearchEngine) deploy automatically by `travis-ci` to `gh-pages` branch.
