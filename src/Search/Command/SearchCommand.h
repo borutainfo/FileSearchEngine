@@ -10,6 +10,8 @@
 #include "Translation/Service/TranslationService.h"
 #include "Search/Entity/SearchResultEntity.h"
 #include "Search/Factory/SearchResultEntityFactory.h"
+#include "Search/Collection/SearchResultCollection.h"
+#include "Search/Collection/SearchResultCollection.cpp"
 
 using namespace std;
 
@@ -30,13 +32,6 @@ public:
     * @param vector<string> arguments
     */
     void execute(vector<string> arguments) override;
-
-protected:
-    /**
-    * @brief Internal method to display results of search.
-    * @param vector<SearchResultEntity> *resultCollection
-    */
-    void displayResults(vector<SearchResultEntity> *resultCollection);
 
 private:
     vector<FileEntity> *fileEntityCollection;

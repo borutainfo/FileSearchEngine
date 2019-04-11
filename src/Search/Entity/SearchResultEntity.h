@@ -24,6 +24,11 @@ public:
      * @param PositiveNumber *matches
      */
     void setMatches(PositiveNumber *matches);
+
+    /**
+     * @brief Create string from entity data.
+     */
+    explicit operator string() const;
 };
 
 #endif

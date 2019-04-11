@@ -35,7 +35,7 @@ void SearchCommand::execute(vector<string> arguments) {
         return;
     }
 
-    vector<SearchResultEntity> resultCollection;
+    SearchResultCollection<SearchResultEntity> resultCollection = {};
 
     for (const auto &fileEntity: *this->fileEntityCollection) {
         string content = fileEntity.getFileContent()->value();
@@ -43,21 +43,9 @@ void SearchCommand::execute(vector<string> arguments) {
         if (regex_search(content.begin(), min(content.end(), content.begin() + (1024 * 4)), regex)) {
             SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
             searchResultEntity.setMatches(new PositiveNumber(1));
-            resultCollection.push_back(searchResultEntity);
+            resultCollection.add(searchResultEntity);
         }
     }
 
-    this->displayResults(&resultCollection);
-}
-
-void SearchCommand::displayResults(vector<SearchResultEntity> *resultCollection) {
-    if (resultCollection->empty()) {
-        cout << "No results!" << endl;
-        return;
-    }
-
-    cout << "Files that matches to requested search query:" << endl;
-    for (const auto &resultEntity: *resultCollection) {
-        cout << "- " << resultEntity.getFileName()->value() << endl;
-    }
+    resultCollection.display();
 }

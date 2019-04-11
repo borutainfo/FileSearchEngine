@@ -7,3 +7,7 @@ PositiveNumber *SearchResultEntity::getMatches() const {
 void SearchResultEntity::setMatches(PositiveNumber *matches) {
     SearchResultEntity::matches = matches;
 }
+
+SearchResultEntity::operator string() const {
+    return "- " + this->getFileName()->value();
+}
