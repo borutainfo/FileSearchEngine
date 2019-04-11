@@ -15,31 +15,31 @@ Application has been created as part of a student project in the subject Advance
 about
 ```
 Show information about the project and the author.
-
+---
 
 ```
 add $filename1 [$filename2 ...]
 ```
 Add a file to the collection in which you will search for data. You can add one file or several at a time.
-
+---
 
 ```
 delete $filename1 [$filename2 ...]
 ```
 Delete file from collection in which you will search for data. You can delete one file or several at a time.
-
+---
 
 ```
 exit
 ```
 Close the application.
-
+---
 
 ```
 help
 ```
 Get information about how to use this application.
-
+---
 
 ```
 search $searchQuery
@@ -51,19 +51,47 @@ You can use any characters. If you use spaces between two words the engine will 
 Some examples - good:
     ```
     search Sebastian AND Boruta
+    ```
+
+    ```
     search Sebastian OR Boruta AND NOT Kowalski
+    ```
+
+    ```
     search (Sebastian Boruta OR Mickiewicz) AND NOT Kowalski
+    ```
+
+    ```
     search (NOT (Sebastian OR Boruta) AND Kowalski) OR Nowak
     ```
 
 BAD (not working properly):
     ```
     search SebastianANDBoruta
+    ```
+
+    ```
     search SebastianOR Boruta AND NOTKowalski
+    ```
+
+    ```
     search Sebastian OR Boruta) AND NOT Kowalski
+    ```
+
+    ```
     search (NOT (Sebastian OR Boruta) AND Kowalski)OR((Nowak
     ```
 
 ## Documentation
 
-See [Doxygen documentation](https://borutainfo.github.io/FileSearchEngine) deploy automatically by `travis-ci` to `gh-pages` branch.
+See [Doxygen documentation](https://borutainfo.github.io/FileSearchEngine) deployed automatically by `travis-ci` to `gh-pages` branch.
+
+### Build
+
+To build application execute:
+
+```bash
+mkdir build && cd build
+cmake ..
+make engine
+```
