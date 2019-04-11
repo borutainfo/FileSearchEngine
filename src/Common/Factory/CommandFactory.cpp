@@ -9,6 +9,10 @@ ICommand *CommandFactory::create(string commandName) {
         return new AddFileCommand(this->fileEntityCollection);
     } else if (commandName == CommandConstant::SEARCH) {
         return new SearchCommand(this->fileEntityCollection);
+    } else if (commandName == CommandConstant::ABOUT) {
+        return new AboutCommand();
+    } else if (commandName == CommandConstant::DELETE) {
+        return new DeleteFileCommand(this->fileEntityCollection);
     }
 
     throw CommandNotExistsException();

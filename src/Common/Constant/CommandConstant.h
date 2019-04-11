@@ -11,6 +11,8 @@ public:
     static constexpr const char *HELP = "help";
     static constexpr const char *ADD_FILE = "add";
     static constexpr const char *SEARCH = "search";
+    static constexpr const char *ABOUT = "about";
+    static constexpr const char *DELETE = "delete";
 };
 
 #endif

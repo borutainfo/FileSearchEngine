@@ -9,7 +9,9 @@
 #include "Common/Constant/CommandConstant.h"
 #include "File/Entity/FileEntity.h"
 #include "File/Command/AddFileCommand.h"
+#include "File/Command/DeleteFileCommand.h"
 #include "Terminal/Command/HelpCommand.h"
+#include "Terminal/Command/AboutCommand.h"
 #include "Search/Command/SearchCommand.h"
 
 using namespace std;
