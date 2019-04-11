@@ -21,7 +21,7 @@ public:
     void add(T singleResult);
 
     /**
-    * @brief Method to display all results.
+    * @brief Method to display all search results.
     */
     void display();
 
