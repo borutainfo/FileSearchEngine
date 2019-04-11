@@ -4,4 +4,5 @@
 <area shape="rect" id="node4" href="$structInvalidFileContentException.html" title="Exception thrown when given string is not correct file content. " alt="" coords="145,107,330,133"/>
 <area shape="rect" id="node5" href="$structInvalidFileNameException.html" title="Exception thrown when given string is not correct file name. " alt="" coords="150,157,325,184"/>
 <area shape="rect" id="node6" href="$structInvalidPositiveNumberException.html" title="Exception thrown when given number is not correct positive number. " alt="" coords="132,208,343,235"/>
+<area shape="rect" id="node7" href="$structInvalidQueryException.html" title="Exception thrown if no search query is invalid. " alt="" coords="161,259,314,285"/>
 </map>
