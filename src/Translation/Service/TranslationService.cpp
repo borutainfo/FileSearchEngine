@@ -5,6 +5,19 @@
 string TranslationService::translateQueryToRegex(string query) {
     string regexPattern = move(query);
 
+    // verify number of brackets
+    unsigned int openBracket = 0, closeBracket = 0;
+    for (char &character : regexPattern) {
+        if(character == '(') {
+            openBracket++;
+        } else if (character == ')') {
+            closeBracket++;
+        }
+    }
+    if (openBracket != closeBracket) {
+        throw InvalidQueryException();
+    }
+
     // remove multiple spaces
     regexPattern = regex_replace(regexPattern, regex("[ ]{2,}"), " ");
 
@@ -18,7 +31,7 @@ string TranslationService::translateQueryToRegex(string query) {
         unsigned int lastPosition = regexPattern.size();
 
         // left border
-        unsigned int currentPosition = position, openBracket = 0, closeBracket = 0;
+        unsigned int currentPosition = position = openBracket = closeBracket = 0;
         while (currentPosition > 0) {
             // break by OR
             if (currentPosition > 6 && regexPattern.substr(currentPosition - 6, 6) == R"(\ OR\ )") {
@@ -50,8 +63,7 @@ string TranslationService::translateQueryToRegex(string query) {
 
         // right border
         currentPosition = position + 7;
-        openBracket = 0;
-        closeBracket = 0;
+        openBracket = closeBracket = 0;
         while (currentPosition < lastPosition) {
             // break by OR
             if (currentPosition < lastPosition - 6 && regexPattern.substr(currentPosition, 6) == R"(\ OR\ )") {

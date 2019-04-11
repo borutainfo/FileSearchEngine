@@ -17,7 +17,13 @@ void SearchCommand::execute(vector<string> arguments) {
     searchQuery = searchQuery.substr(0, searchQuery.size() - 1);
 
     auto *translationService = new TranslationService;
-    string pattern = translationService->translateQueryToRegex(searchQuery);
+    string pattern;
+    try {
+        pattern = translationService->translateQueryToRegex(searchQuery);
+    } catch (InvalidQueryException &e) {
+        cout << e.what() << endl;
+        return;
+    }
 
     cout << "Regex query: " << pattern << endl << endl;
 
@@ -34,15 +40,10 @@ void SearchCommand::execute(vector<string> arguments) {
     for (const auto &fileEntity: *this->fileEntityCollection) {
         string content = fileEntity.getFileContent()->value();
 
-        try {
-            if (regex_search(content.begin(), content.begin() + (1024 * 4), regex)) {
-                SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
-                searchResultEntity.setMatches(new PositiveNumber(1));
-                resultCollection.push_back(searchResultEntity);
-            }
-        } catch (...) {
-            cout << "Exception!" << endl;
-            return;
+        if (regex_search(content.begin(), min(content.end(), content.begin() + (1024 * 4)), regex)) {
+            SearchResultEntity searchResultEntity = SearchResultEntityFactory::createFromFileEntity(fileEntity);
+            searchResultEntity.setMatches(new PositiveNumber(1));
+            resultCollection.push_back(searchResultEntity);
         }
     }
 
@@ -57,6 +58,6 @@ void SearchCommand::displayResults(vector<SearchResultEntity> *resultCollection)
 
     cout << "Files that matches to requested search query:" << endl;
     for (const auto &resultEntity: *resultCollection) {
-        cout << resultEntity.getFileName()->value() << endl;
+        cout << "- " << resultEntity.getFileName()->value() << endl;
     }
 }

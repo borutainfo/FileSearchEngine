@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <regex>
+#include <algorithm>
 #include "Common/Command/ICommand.h"
 #include "File/Entity/FileEntity.h"
 #include "Translation/Service/TranslationService.h"

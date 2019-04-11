@@ -4,6 +4,7 @@
 #include <string>
 #include <regex>
 #include <iostream>
+#include "Translation/Exception/InvalidQueryException.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ public:
     * @brief Method returns regular expression created from input search query.
     * @param string query
     * @return string
+    * @throw InvalidQueryException when given query is incorrect
     */
     string translateQueryToRegex(string query);
 };
