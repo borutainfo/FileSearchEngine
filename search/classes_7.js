@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['positivenumber',['PositiveNumber',['../classPositiveNumber.html',1,'']]]
+  ['icommand',['ICommand',['../classICommand.html',1,'']]],
+  ['invalidfilecontentexception',['InvalidFileContentException',['../structInvalidFileContentException.html',1,'']]],
+  ['invalidfilenameexception',['InvalidFileNameException',['../structInvalidFileNameException.html',1,'']]],
+  ['invalidpositivenumberexception',['InvalidPositiveNumberException',['../structInvalidPositiveNumberException.html',1,'']]]
 ];

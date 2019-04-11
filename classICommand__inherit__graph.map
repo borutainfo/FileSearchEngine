@@ -1,5 +1,7 @@
 <map id="ICommand" name="ICommand">
-<area shape="rect" id="node2" href="$classAddFileCommand.html" title="Command used to adding a file to collection. " alt="" coords="5,80,132,107"/>
-<area shape="rect" id="node3" href="$classHelpCommand.html" title="Command used to display help information. " alt="" coords="157,80,266,107"/>
-<area shape="rect" id="node4" href="$classSearchCommand.html" title="Command used to search text in files from collection. " alt="" coords="290,80,413,107"/>
+<area shape="rect" id="node2" href="$classAboutCommand.html" title="Command used to display information about application. " alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node3" href="$classAddFileCommand.html" title="Command used to adding a file to collection. " alt="" coords="145,80,272,107"/>
+<area shape="rect" id="node4" href="$classDeleteFileCommand.html" title="Command used to delete a file from collection. " alt="" coords="297,80,438,107"/>
+<area shape="rect" id="node5" href="$classHelpCommand.html" title="Command used to display help information. " alt="" coords="462,80,571,107"/>
+<area shape="rect" id="node6" href="$classSearchCommand.html" title="Command used to search text in files from collection. " alt="" coords="595,80,718,107"/>
 </map>

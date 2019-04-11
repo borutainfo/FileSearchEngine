@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['searchcommand',['SearchCommand',['../classSearchCommand.html',1,'']]],
-  ['searchresultentity',['SearchResultEntity',['../classSearchResultEntity.html',1,'']]],
-  ['searchresultentityfactory',['SearchResultEntityFactory',['../classSearchResultEntityFactory.html',1,'']]]
+  ['positivenumber',['PositiveNumber',['../classPositiveNumber.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exitcommand',['ExitCommand',['../structExitCommand.html',1,'']]]
+  ['deletefilecommand',['DeleteFileCommand',['../classDeleteFileCommand.html',1,'']]]
 ];
