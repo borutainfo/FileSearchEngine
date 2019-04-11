@@ -9,38 +9,53 @@ A simple search engine for texts in files.
 
 Application has been created as part of a student project in the subject Advanced C++ at the Warsaw University of Technology by [Sebastian Boruta](https://boruta.info/).
 
+## Documentation
+
+See [Doxygen documentation](https://borutainfo.github.io/FileSearchEngine) deployed automatically by `travis-ci` to `gh-pages` branch.
+
+## Build
+
+To build application execute:
+
+```bash
+mkdir build && cd build
+cmake ..
+make engine
+```
+
 ## Available commands
 
+### about application
 ```bash
 about
 ```
 Show information about the project and the author.
----
 
+### add file
 ```
 add $filename1 [$filename2 ...]
 ```
 Add a file to the collection in which you will search for data. You can add one file or several at a time.
----
 
+### delete file
 ```
 delete $filename1 [$filename2 ...]
 ```
 Delete file from collection in which you will search for data. You can delete one file or several at a time.
----
 
+### exit application
 ```
 exit
 ```
 Close the application.
----
 
+### get help
 ```
 help
 ```
 Get information about how to use this application.
----
 
+### search
 ```
 search $searchQuery
 ```
@@ -49,49 +64,17 @@ Search for text in files added to the collection using the given expression. You
 You can use any characters. If you use spaces between two words the engine will search for the entire expression (including spaces). If you want to search for a bracket, you must precede it with a slash.
 
 Some examples - good:
-    ```
-    search Sebastian AND Boruta
-    ```
-
-    ```
-    search Sebastian OR Boruta AND NOT Kowalski
-    ```
-
-    ```
-    search (Sebastian Boruta OR Mickiewicz) AND NOT Kowalski
-    ```
-
-    ```
-    search (NOT (Sebastian OR Boruta) AND Kowalski) OR Nowak
-    ```
+```
+search Sebastian AND Boruta
+search Sebastian OR Boruta AND NOT Kowalski
+search (Sebastian Boruta OR Mickiewicz) AND NOT Kowalski
+search (NOT (Sebastian OR Boruta) AND Kowalski) OR Nowak
+```
 
 BAD (not working properly):
-    ```
-    search SebastianANDBoruta
-    ```
-
-    ```
-    search SebastianOR Boruta AND NOTKowalski
-    ```
-
-    ```
-    search Sebastian OR Boruta) AND NOT Kowalski
-    ```
-
-    ```
-    search (NOT (Sebastian OR Boruta) AND Kowalski)OR((Nowak
-    ```
-
-## Documentation
-
-See [Doxygen documentation](https://borutainfo.github.io/FileSearchEngine) deployed automatically by `travis-ci` to `gh-pages` branch.
-
-### Build
-
-To build application execute:
-
-```bash
-mkdir build && cd build
-cmake ..
-make engine
+```
+search SebastianANDBoruta
+search SebastianOR Boruta AND NOTKowalski
+search Sebastian OR Boruta) AND NOT Kowalski
+search (NOT (Sebastian OR Boruta) AND Kowalski)OR((Nowak
 ```
